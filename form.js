@@ -69,15 +69,15 @@
     }
   }
   function addQuoteItemsToHiddenInput(item) {
-    const hiddenInput = document.createElement("input");
-    document.getElementById("wf-form-Request-Quote")?.appendChild(hiddenInput);
-    hiddenInput.name = "Item: " + item["slug"];
-    hiddenInput.id = item["slug"];
-    hiddenInput.type = "hidden";
-    hiddenInput.value = " Quantity: " + item["quantity"];
-    hiddenInput.className = "quote-item";
-    document.getElementById("wf-form-Request-Quote")?.appendChild(hiddenInput);
-  }
+  const hiddenInput = document.createElement("input");
+  document.getElementById("wf-form-Request-Quote")?.appendChild(hiddenInput);
+  hiddenInput.name = "Item: " + item["name"]; // Используем название продукта вместо slug
+  hiddenInput.id = item["slug"];
+  hiddenInput.type = "hidden";
+  hiddenInput.value = "Quantity: " + item["quantity"];
+  hiddenInput.className = "quote-item";
+  document.getElementById("wf-form-Request-Quote")?.appendChild(hiddenInput);
+}
   function addClickEventListenersToAddToQuoteButtons() {
     const addToQuoteButtons = Array.from(document.getElementsByClassName("add-to-quote-button"));
     addToQuoteButtons.forEach((btn) => {
